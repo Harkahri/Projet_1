@@ -1,0 +1,485 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+li {
+  text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/** end reset css**/
+
+.container {
+  max-width: 1140px;
+  justify-content: center;
+  margin: auto;
+}
+body {
+  margin: auto;
+  font-family: "Work Sans";
+  font-size: 14px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+section {
+  margin: 50px 0;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Syne";
+  font-size: 22px;
+  font-weight: 800;
+  color: #b1663c;
+}
+
+h1 > span {
+  font-family: "Work Sans";
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+nav li {
+  padding: 0 10px;
+  font-size: 1.2em;
+  color: black;
+}
+
+li:hover {
+  color: #b1663c;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: #b1663c;
+}
+#introduction {
+  display: flex;
+  align-items: center;
+}
+#introduction figure {
+  flex: 1;
+}
+#introduction img {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+#introduction article {
+  flex: 1;
+}
+#introduction h2 {
+  margin-bottom: 1em;
+}
+
+#introduction p {
+  margin-bottom: 0.5em;
+}
+
+#portfolio h2 {
+  text-align: center;
+  /* margin-bottom: 1em; */
+  margin-right: 20px;
+}
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: center;
+}
+.galleryModal {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  justify-items: center;
+}
+
+.gallery img {
+  width: 100%;
+}
+.galleryModal img {
+  width: 100%;
+}
+#contact {
+  width: 50%;
+  margin: auto;
+}
+#contact > * {
+  text-align: center;
+}
+#contact h2 {
+  margin-bottom: 20px;
+}
+#contact form {
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+}
+
+#contact input {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#contact label {
+  margin: 2em 0 1em 0;
+}
+#contact textarea {
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"] {
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2em;
+}
+
+.filtres {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  gap: 10px;
+}
+.filtres button {
+  border: 1px solid #1d6154;
+  color: #1d6154;
+  font-weight: 700;
+  border-radius: 60px;
+
+  min-width: 100px;
+  background-color: white;
+
+  height: 40px;
+  padding: 10px;
+}
+
+.gallery {
+  margin-bottom: 50px;
+}
+
+/* MODE EDITION  */
+
+.modal {
+  display: block;
+  /* display: none; */
+  font-family: "Syne";
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 2000;
+}
+.modal-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+.modifier {
+  display: flex;
+  align-items: center;
+
+  height: 60px;
+  gap: 10px;
+
+  color: white;
+  font-size: 16px;
+}
+.modifier2 {
+  display: flex;
+  align-items: center;
+  font-family: "Work Sans";
+
+  font-weight: 400;
+  font-size: 14px;
+  gap: 10px;
+
+  color: rgb(0, 0, 0);
+}
+
+.modifier3 {
+  display: flex;
+
+  font-family: "Work Sans";
+  margin: 0;
+
+  margin: 20px 0 0 60px;
+  font-weight: 400;
+  font-size: 14px;
+  gap: 10px;
+
+  color: rgb(0, 0, 0);
+}
+.filtresContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.changements {
+  background: #ffffff;
+  border-radius: 60px;
+  padding: 11px 23px 11px 23px;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.modal-pop {
+  display: flex;
+  /* display: none; */
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.modal-modifier {
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  max-width: 630px;
+  max-height: 731px;
+  width: 100%;
+  height: 100%;
+
+  margin: 10%;
+
+  border-radius: 10px;
+  background: #ffffff;
+
+  z-index: 1000;
+
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.042),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.047),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.047),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.046),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.047),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+.fond {
+  position: fixed;
+  display: block;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.modal-modifier .title {
+  display: flex;
+  max-height: 100px;
+  align-items: center;
+  height: 100%;
+  font-weight: 400;
+  font-size: 26px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.modal-modifier button {
+  border: 1px solid #1d6154;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 60px;
+  min-width: 100px;
+  background-color: #1d6154;
+  font-family: "Syne";
+  max-width: 240px;
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+}
+
+.bar {
+  border-top: 1px solid #b3b3b3;
+
+  width: 80%;
+  margin: 30px;
+  padding: 0;
+}
+.gallery-container {
+  display: flex;
+  align-items: center;
+  max-height: 430px;
+  max-width: 500px;
+  height: 100%;
+  width: 100%;
+
+  z-index: 100;
+}
+.delete a {
+  color: #d65353;
+  font-family: "Syne";
+}
+.delete {
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 23px 0 48px 0;
+}

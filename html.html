@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+
+	<link rel="shortcut icon" href="assets/icons/favicon.png"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	
+	<script src="https://kit.fontawesome.com/7e7bcdf82e.js" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+	<div class="edit modale-bloc display-none" id="modale">
+		<img src="./assets/icons/icon-edit-white.svg">
+		<button class="editBtn">Mode édition</button>
+		<button class="edit1">publier les changements</button>
+	</div> 
+<header id="header">
+	<h1>Sophie Bluel<span>Architecte d'intérieur</span></h1>
+	<nav>
+		<ul>
+			<li><a href="#portfolio">projets</a></li>
+			<li><a href="#contact">contact</a></li>
+			<li><a href="login.html" id="login-link">login</a></li>
+			<li><a href="https://www.instagram.com/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<div class="overlay">
+		<div class="myModal">
+			<div class="modal_close">
+				<svg class="closeBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</div>
+			<div class="modal_header">
+				<h2>Galerie photo</h2>
+			</div>
+			<div class="modal_body">
+				<i class="fa-regular fa-trash-can deleteIcon"></i>
+			</div>
+			<hr>
+			<div class="modal_footer">
+				<button class="modal_footer_button">Ajouter une photo</button>
+				<button class="modal_footer_button2">Supprimer la galerie</button>
+			</div>
+		</div>
+		<div class="modal_ajout">
+			<div class="modal_close">
+				<svg class="closeBtn2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</div>
+			<div class="modal_back">
+				<svg class="backBtn" width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M20.3459 6.91164H2.14392L7.58919 1.48731C7.84495 1.23155 7.84495 0.817527 7.58919 0.562423C7.33343 0.306666 6.9194 0.306666 6.6643 0.562423L0.188882 7.03724C-0.0629605 7.28908 -0.0629605 7.71028 0.188882 7.96213L6.66436 14.4376C6.92011 14.6934 7.33414 14.6934 7.58924 14.4376C7.845 14.1818 7.845 13.7678 7.58924 13.5127L2.14392 8.21979H20.3459C20.7069 8.21979 20.9999 7.92673 20.9999 7.56571C20.9999 7.2047 20.7069 6.91164 20.3459 6.91164Z" fill="black"/>
+				</svg>
+			</div>
+				<div class="modal_header">
+					<h2 class="modal_header_title">Ajout photo</h2>
+				</div>
+			<form>
+				<div id="error-modal">Merci de remplir tous les champs.</div>
+				<div class="file-input">
+					<i class="fa-sharp fa-regular fa-image"></i>
+					<label for="file" class="label-file" id="buttonAjout">+ Ajouter une photo</label>
+					<input id="file" class="input-file" type="file">
+					<p id="formatPhoto">jpg, png : 4mo max</p>
+				</div>
+				<label for="titre" id="labTitre">Titre</label>
+				<input type="text" id="titre">
+				<label for="catégorie" id="labCategorie">Catégorie</label>	
+				<select id="catégorie">
+					<option></option>
+						<option value="1" data-id="1">Objets</option>
+						<option value="2" data-id="2">Appartements</option>
+						<option value="3" data-id="3">Hôtel & Restaurants</option>
+				</select>
+				<hr>
+				<div class="modal_footer">
+					<button class="modal_footer_validation">Valider</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<section id="introduction">
+		<figure>
+			<img src="./assets/images/sophie-bluel.png" alt="Sophie">
+		</figure>
+		<article>
+			<div class="edit4 modale-bloc  display-none">
+				<img src="./assets/icons/icon-edit-black.svg">
+				<button class="edit4Btn">modifier</button>
+			</div>
+			<h2>Designer d'espace</h2>
+			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+			<br>
+			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux, et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+			<br>
+			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice).</p>
+		</article>
+	</section>
+	<div class="edit2 modale-bloc display-none">
+		<img src="./assets/icons/icon-edit-black.svg">
+		<button class="edit2Btn">modifier</button>
+	</div>
+	<!-- <div id="messageProjet">Projet ajouté !</div> -->
+	<section id="portfolio">
+		<div class="h2AndEdit">
+			<h2>Mes Projets</h2>
+			<div class="edit3 modale-bloc  display-none">
+				<img src="./assets/icons/icon-edit-black.svg">
+				<button class="edit3Btn">modifier</button>
+			</div>
+		</div>
+		<div class="filtres">
+			<button class="all" data-id="">Tous</button>
+			<button class="button1" data-id="1">Objets</button>
+			<button class="button2" data-id="2">Appartements</button>
+			<button class="button3" data-id="3">Hôtel & Restaurants</button>
+		</div>
+		<div class="gallery">
+		</div>
+	</section>
+	</section>
+	<section id="contact">
+		<h2>Contact</h2>
+		<p>Vous avez un projet ? Discutons-en !</p>
+		<div id="error-contact">Merci de remplir tous les champs.</div>
+		<form action="#" method="post">
+			<label for="name">Nom</label>
+				<input type="text" name="name" id="name">
+			<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+			<label for="message">Message</label>
+				<textarea name="message" id="message" cols="30" rows="10"></textarea>
+				<input type="submit" value="Envoyer">
+		</form>
+		<p id="confirmation">Formulaire envoyé !</p>
+	</section>
+</main>
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/modal.js"></script>
+<a href="#" id="back-to-top"><i class="fa fa-chevron-up back-to-top"></i></a>
+
+</body>
