@@ -1,4 +1,5 @@
 getWorks(); // initalise la fonction getWorks
+UserConnected();
 
 async function getWorks() {
   // fonction asynchrone
@@ -6,9 +7,9 @@ async function getWorks() {
   const figures = []; // tableau vide (push le remplit grâce à la boucle FOR)
 
   const filtres = document.querySelectorAll(".filtres button");
-  const tous = document.querySelector(".tous");
+  const tous = document.querySelector("#tous");
 
-  const buttons = document.querySelectorAll("button");
+  const buttons = document.querySelectorAll(".filter-button");
 
   try {
     // Try ou Catch
@@ -64,6 +65,29 @@ async function getWorks() {
         button.style.backgroundColor = "#1D6154";
         button.style.color = "#FFFEF8";
       });
+    });
+  }
+}
+
+function UserConnected() {
+  const modal = document.querySelectorAll(".modal-header");
+  const filtres = document.querySelector(".filtres");
+  const editBtn = document.querySelector(".edit1");
+  const editBtn2 = document.querySelector(".edit2");
+
+  if (sessionStorage.userToken) {
+    let loginLink = document.getElementById("login");
+    loginLink.innerHTML = "se déconnecter";
+
+    let url = loginLink.getAttribute("href") + "?logout=true";
+    loginLink.setAttribute("href", url);
+
+    modal.forEach((element) => {
+      element.classList.remove("display-none");
+      filtres.classList.add("display-none");
+
+      editBtn.style.display = "block";
+      editBtn2.style.display = "flex";
     });
   }
 }

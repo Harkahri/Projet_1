@@ -130,17 +130,19 @@ table {
 /** end reset css**/
 body {
   max-width: 1140px;
+  box-sizing: content-box;
   margin: auto;
   font-family: "Work Sans";
   font-size: 14px;
 }
+
 header {
   display: flex;
   justify-content: space-between;
-  margin: 50px 0;
+  margin: 70px 0;
 }
 section {
-  margin: 50px 0;
+  margin: 10% 0;
 }
 
 h1 {
@@ -172,6 +174,13 @@ nav ul {
 nav li {
   padding: 0 10px;
   font-size: 1.2em;
+}
+nav li img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  max-width: 20px;
 }
 
 li:hover {
@@ -267,6 +276,8 @@ a {
 }
 main {
   display: flex;
+
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -303,7 +314,19 @@ label {
   font-weight: 700;
 }
 footer nav ul {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.footerPage {
   display: flex;
   justify-content: flex-end;
-  margin: 2em;
+  bottom: 5px;
+}
+
+.error {
+  color: #d65353;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
 }

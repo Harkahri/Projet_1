@@ -18,55 +18,125 @@
       referrerpolicy="no-referrer"
     />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
 
 <!-- MOOOOOOODDAAAAAAAALLLLL -->
 
-<section class="fond"></section>
-  <section class="modal">
-    <div class="modal-head">
-      <div class="modifier">
-      <i class="fa-regular fa-pen-to-square"></i>
-      <p>Mode édition</p>
-    </div>
-      <button class="changements">publier les changements</button>
-    </div>
-  </section>
 
-<section class="modal-pop">
-  <div class="modal-modifier">
-    <p class="title">Galerie photo</p>
-    <div class="gallery-container">
-      <div class="galleryModal">
-      </div>
-    </div>
-      <h2 class="bar"></h2>
-        <button class="buttonAdd">Ajouter une photo</button>
-      <p class="delete" ><a href=#>Supprimer la galerie</a></p>
-    </div>
+
+<section class="modal-overlay display-none"></section>
+<div class="modal1">
+<section class="modal-header display-none">
+  <i class="fa-regular fa-pen-to-square"></i> 
+  <button  class="edit">Mode édition</button> 
+
+  <button  class="modal-save" >publier les changements</button>
+
 </section>
 
+<section class="modal-pop">
+<div class="modal-content">
+  <div class="action-buttons">
+    <span class="close"><i class="fa-solid fa-xmark"></i></span>
+   
+  </div>
+  <div class="modal-head">
+    <h2>Galerie photo</h2>
+  </div>
+  <div class="modal-body">
+    <div class="modal-gallery"></div>
+  </div>
+  <div class="bar">
+  <div class="modal-footer">
+    <button class="modal-add" >Ajouter une photo</button>
+
+    <h3>Supprimer la galerie</h3>
+  </div>
+</div>
+</section>
+</div>
+<!-- MODAL 2 -->
+
+<section class="modal-pop2">
+  <div class="modal-content">
+    <div class="action-buttons">
+      <span class="close2"><i class="fa-solid fa-xmark"></i></span>
+      <span class="back"><i class="fa-solid fa-arrow-left"></i></span>
+    </div>
+    <div class="modal-head">
+      <h2>Ajout photo</h2>
+    </div>
+
+    <div class="modal-body">
+<form>
+      <div class="modal-adding">
+        <span><svg id="svg-img" width="58" height="46" viewBox="0 0 58 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M57 0H1C0.448 0 0 0.447 0 1V45C0 45.553 0.448 46 1 46H57C57.552 46 58 45.553 58 45V1C58 0.447 57.552 0 57 0ZM56 44H2V2H56V44Z" fill="#B9C5CC"/>
+          <path d="M16 22.138C19.071 22.138 21.569 19.64 21.569 16.57C21.569 13.498 19.071 11 16 11C12.929 11 10.431 13.498 10.431 16.569C10.431 19.64 12.929 22.138 16 22.138ZM16 13C17.968 13 19.569 14.602 19.569 16.569C19.569 18.536 17.968 20.138 16 20.138C14.032 20.138 12.431 18.537 12.431 16.57C12.431 14.603 14.032 13 16 13Z" fill="#B9C5CC"/>
+          <path d="M7.00004 40C7.23404 40 7.47004 39.918 7.66004 39.751L23.973 25.389L34.275 35.69C34.666 36.081 35.298 36.081 35.689 35.69C36.08 35.299 36.08 34.667 35.689 34.276L30.882 29.469L40.063 19.415L51.324 29.738C51.731 30.111 52.364 30.083 52.737 29.676C53.11 29.269 53.083 28.636 52.675 28.263L40.675 17.263C40.479 17.084 40.218 16.995 39.955 17.001C39.69 17.013 39.44 17.13 39.261 17.326L29.467 28.053L24.724 23.31C24.35 22.937 23.752 22.918 23.356 23.266L6.33904 38.249C5.92404 38.614 5.88404 39.246 6.24904 39.661C6.44704 39.886 6.72304 40 7.00004 40Z" fill="#B9C5CC"/>
+          </svg></span>
+        
+        <label for="file" accept=".jpeg,.jpg,.png" class="label-file" id="buttonAjout">+ Ajouter photo</label>
+        <input id="file" class="input-file" type="file">
+        <p id="format-photo">jpg, png : 4mo max</p>
+      </div>
+
+    <section class="ajout-photo">
+    <label for="titre" id="title">Titre</label>
+		<input type="text" id="titre">
+    
+    <label for="modal-categorie" id="categorie">Catégorie</label>	
+      <select id="modal-categorie">
+					<option></option>
+					<option value="1" data-id="1">Objets</option>
+					<option value="2" data-id="2">Appartements</option>
+					<option value="3" data-id="3">Hôtel & Restaurants</option>
+			</select>
+   
+    </section>
+    </div> 
+ 
+  
+    <div class="bar">
+      <div class="modal-footer"><button class="modal-done">valider</button></div>
+    </div>
+</form>
+  </section>
+
+<!-- MODAL 2 -->
+<!-- MOOOOOOODDAAAAAAAALLLLL -->
+
   <section class="container">
+
     <header>
-      <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+     
+ 
+
+      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+  
       <nav>
         <ul>
-          <li>projets</li>
-          <li>contact</li>
-          <li><a href="login.html">login</a></li>
+          <li><a href="#portfolio">projets</a></li>
+          <li><a href="#contact">contact</a></li>
+          <li><a href="login.html" id="login">connexion</a></li>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+          
         </ul>
       </nav>
     </header>
+
     <main>
       <section id="introduction">
         <figure>
           <img src="./assets/images/sophie-bluel.png" alt="" />
-          <div class="modifier3">
-            <i class="fa-regular fa-pen-to-square"></i>
-            <p><a href=#>Modifier</a></p>
+
+          <div class="edit1">
+            <i class ="fa-regular fa-pen-to-square"></i>
+            <button class="edit2Btn">modifier</button>
+          </div>
+
          </div>
         </figure>
         
@@ -91,19 +161,21 @@
       </section>
 
       <section id="portfolio">
-        <section class="filtresContainer">
-        <h2>Mes Projets</h2>
-<div class="modifier2">
-   <i class="fa-regular fa-pen-to-square"></i>
-   <p><a href=#>Modifier</a></p>
-</div>
+        <section class="filtresContainer">  
+          <div class="editH2">
+          <h2>Mes Projets </h2> 
+            <div class="edit2">
+          <i class ="fa-regular fa-pen-to-square"></i>
+          <button class="edit3Btn">modifier</button>
+        </div>
+      </div>
       </section>
 
         <div class="filtres">
-          <button class="tous" data-id="">Tous</button>
-          <button class="button1" data-id="1">Objets</button>
-          <button class="button2" data-id="2">Appartements</button>
-          <button class="button3" data-id="3">Hôtels & restaurants</button>
+          <button class="filter-button" id="tous" data-id="">Tous</button>
+          <button class="filter-button" id="button1" data-id="1">Objets</button>
+          <button class="filter-button" id="button2" data-id="2">Appartements</button>
+          <button class="filter-button" id="button3" data-id="3">Hôtels & restaurants</button>
         </section>
 
 
@@ -131,8 +203,10 @@
         </ul>
       </nav>
     </footer>
-    <script src="script.js"></script>
-    <script src="modal.js"></script>
+    <script src="../FrontEnd/JS/script.js"></script>
+    <script src="../FrontEnd/JS/login.js"></script>
+    <script src="../FrontEnd/JS/modal.js"></script>
+    
   </section>
 
   </body>

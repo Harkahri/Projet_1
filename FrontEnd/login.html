@@ -11,22 +11,22 @@
       rel="stylesheet"
     />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="./assets/stylecopy.css" />
+    <link rel="stylesheet" href="./CSS/login.css" />
   </head>
   <body>
     <header>
-      <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
         <ul>
-          <li>projets</li>
-          <li>contact</li>
-          <li><a href="login.html">login</a></li>
+          <li><a href="./index.html#portfolio">projets</a></li>
+          <li><a href="./index.html#contact">contact</a></li>
+          <li><a href="login.html">connexion</a></li>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="login">
+      <section id="login">
         <form>
           <h2 id="login-title">Login</h2>
           <form action="#" method="post">
@@ -35,7 +35,7 @@
 
             <label for="password"><p>Mot de passe</p></label>
             <input type="password" name="password" id="password" />
-
+            <div class="error">Mot de passe et/ou email incorrect</div>
             <input type="submit" value="Se connecter" id="connect" />
             <a href="#" id="forgetpassword">Mot de passe oublié</a>
           </form>
@@ -43,11 +43,14 @@
       </section>
     </main>
     <footer>
-      <nav>
-        <ul>
-          <li>Mentions Légales</li>
-        </ul>
-      </nav>
+      <section class="footerPage">
+        <nav>
+          <ul>
+            <li>Mentions Légales</li>
+          </ul>
+        </nav>
+      </section>
     </footer>
   </body>
+  <script src="./JS/login.js"></script>
 </html>
