@@ -195,13 +195,15 @@ nav li img {
   max-width: 20px;
 }
 li:hover {
-  color: #b1663c;
+  font-weight: 700;
+  color: #000000;
 }
 a:visited {
   color: black;
 }
 a:hover {
-  color: #b1663c;
+  color: #000000;
+  font-weight: 700;
 }
 #introduction {
   display: flex;
@@ -337,6 +339,7 @@ footer nav ul {
   border: none;
   background: none;
   color: white;
+  cursor: pointer;
 }
 
 .modal-overlay {
@@ -383,6 +386,7 @@ footer nav ul {
 
   font-weight: 500;
   font-size: 14px;
+  cursor: pointer;
 }
 
 /* MODAL POP UP  */
@@ -577,6 +581,7 @@ footer nav ul {
   margin: 10px;
   max-width: 100px;
   margin-left: 60px;
+  cursor: pointer;
 }
 
 .edit2 {

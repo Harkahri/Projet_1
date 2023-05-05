@@ -19,12 +19,13 @@
     />
     <meta name="description" content="" />
     <link rel="stylesheet" href="./CSS/style.css" />
+
+    <link rel="icon" type="image/png" href="./assets/icons/crayon-et-regle.png" />
   </head>
-  <body>
 
-<!-- MOOOOOOODDAAAAAAAALLLLL -->
-
-
+<body>
+  <main>
+<!-- MODDAL -->
 
 <section class="modal-overlay display-none"></section>
 <div class="modal1">
@@ -70,7 +71,7 @@
     </div>
 
     <div class="modal-body">
-<form>
+<form id="myForm">
       <div class="modal-adding">
         <span><svg id="svg-img" width="58" height="46" viewBox="0 0 58 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M57 0H1C0.448 0 0 0.447 0 1V45C0 45.553 0.448 46 1 46H57C57.552 46 58 45.553 58 45V1C58 0.447 57.552 0 57 0ZM56 44H2V2H56V44Z" fill="#B9C5CC"/>
@@ -102,32 +103,28 @@
     <div class="bar">
       <div class="modal-footer"><button class="modal-done">valider</button></div>
     </div>
-</form>
-  </section>
+  </form>
+</section>
 
 <!-- MODAL 2 -->
-<!-- MOOOOOOODDAAAAAAAALLLLL -->
+<!-- MODAL -->
 
   <section class="container">
-
     <header>
-     
- 
-
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
   
       <nav>
         <ul>
           <li><a href="#portfolio">projets</a></li>
           <li><a href="#contact">contact</a></li>
-          <li><a href="login.html" id="login">connexion</a></li>
+          <li><a href="login.html" id="login">login</a></li>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
           
         </ul>
       </nav>
     </header>
 
-    <main>
+    
       <section id="introduction">
         <figure>
           <img src="./assets/images/sophie-bluel.png" alt="" />
@@ -158,6 +155,7 @@
             : architecte DPLG, décorateur(trice)
           </p>
         </article>
+
       </section>
 
       <section id="portfolio">
@@ -167,20 +165,23 @@
             <div class="edit2">
           <i class ="fa-regular fa-pen-to-square"></i>
           <button class="edit3Btn">modifier</button>
+          </div>
         </div>
-      </div>
       </section>
 
-        <div class="filtres">
-          <button class="filter-button" id="tous" data-id="">Tous</button>
-          <button class="filter-button" id="button1" data-id="1">Objets</button>
-          <button class="filter-button" id="button2" data-id="2">Appartements</button>
-          <button class="filter-button" id="button3" data-id="3">Hôtels & restaurants</button>
-        </section>
+          <div class="filtres">
+            <button class="filter-button" id="tous" data-id="">Tous</button>
+            <button class="filter-button" id="button1" data-id="1">Objets</button>
+            <button class="filter-button" id="button2" data-id="2">Appartements</button>
+            <button class="filter-button" id="button3" data-id="3">Hôtels & restaurants</button>
+          </div>
+      </section>
 
 
         <div class="gallery"></div>
+
       </section>
+
       <section id="contact">
         <h2>Contact</h2>
         <p>Vous avez un projet ? Discutons-en !</p>
@@ -194,15 +195,16 @@
           <input type="submit" value="Envoyer" />
         </form>
       </section>
-    </main>
 
-    <footer>
+</main>
+<footer>
       <nav>
         <ul>
-          <li>Mentions Légales</li>
+          <li><a href="./mentions.html">Mentions Légales</a></li>
         </ul>
       </nav>
-    </footer>
+</footer>
+
     <script src="../FrontEnd/JS/script.js"></script>
     <script src="../FrontEnd/JS/login.js"></script>
     <script src="../FrontEnd/JS/modal.js"></script>

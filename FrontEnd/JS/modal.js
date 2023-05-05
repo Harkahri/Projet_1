@@ -29,7 +29,7 @@ function openModal() {
     m.preventDefault();
     modalPop2.style.display = "flex";
   });
-  getWorks(); // initalise la fonction getWorks
+  getWorks(); // appelle la fonction getWorks
 
   // function close
 
@@ -63,6 +63,15 @@ function openModal() {
     m.preventDefault();
     modalPop2.style.display = "none";
   });
+
+  const done = document.querySelector(".modal-done");
+
+  done.addEventListener("click", function (m) {
+    m.preventDefault();
+    modalPop2.style.display = "none";
+
+    getWorks();
+  });
 }
 
 async function getWorks() {
@@ -74,8 +83,8 @@ async function getWorks() {
   if (cachedData) {
     // si les données existent dans le cache
     cachedData = JSON.parse(cachedData); // les données sont transformées en objet JS
-    for (let i in cachedData) {
-      const figure = createFigureElement(cachedData[i]);
+    for (let w in cachedData) {
+      const figure = createFigureElement(cachedData[w]);
       figures.push(figure);
       gallery.append(figure);
     }
@@ -85,8 +94,8 @@ async function getWorks() {
       const response = await fetch("http://localhost:5678/api/works");
       const works = await response.json();
 
-      for (let i in works) {
-        const figure = createFigureElement(works[i]);
+      for (let w in works) {
+        const figure = createFigureElement(works[w]);
         figures.push(figure);
         gallery.append(figure);
       }
@@ -123,7 +132,6 @@ function createFigureElement(work) {
 
   figure.appendChild(supprimer);
   figure.appendChild(deplacer);
-
   figure.append(img, figcaption);
 
   supprimer.addEventListener("click", function (m) {
@@ -146,7 +154,7 @@ function addImage() {
 
     preview.src = URL.createObjectURL(image);
     preview.width = 129;
-    preview.height = 193;
+    preview.height = 169;
 
     const previewContainer = document.querySelector(".modal-adding");
     previewContainer.appendChild(preview);
@@ -173,69 +181,79 @@ modalDone.addEventListener("click", (event) => {
   const image = document.getElementById("file").files[0];
 
   // Créer un objet FormData pour envoyer les données
+  if (titre === "" || categorie === "" || !image) {
+    event.preventDefault(); // Annuler l'envoi du formulaire
+    alert("Veuillez remplir tous les champs et ajouter une image.");
+  } else {
+    const formData = new FormData();
+    formData.append("title", titre);
+    formData.append("category", categorie);
+    formData.append("image", image);
 
-  const formData = new FormData();
-  formData.append("title", titre);
-  formData.append("category", categorie);
-  formData.append("image", image);
+    // Envoyer la requête POST à l'API
 
-  // Envoyer la requête POST à l'API
-
-  fetch("http://localhost:5678/api/works", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Projet ajouté !");
-      console.log(data);
-
-      const figure = document.createElement("figure");
-      const figcaption = document.createElement("figcaption");
-      const img = document.createElement("img");
-      const container = document.querySelector(".gallery");
-
-      figure.setAttribute("data-id", categorie);
-      figcaption.textContent = titre;
-
-      figure.appendChild(img);
-      figure.appendChild(figcaption);
-      container.appendChild(figure);
+    fetch("http://localhost:5678/api/works", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
     })
-    .catch((error) => console.error(error));
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Projet ajouté !");
+        console.log(data);
+
+        const figure = document.createElement("figure");
+        const figcaption = document.createElement("figcaption");
+        const img = document.createElement("img");
+        const container = document.querySelector(".gallery");
+
+        figure.setAttribute("data-id", categorie);
+        figcaption.textContent = titre;
+
+        figure.appendChild(img);
+        figure.appendChild(figcaption);
+        container.appendChild(figure);
+
+        refreshWorks();
+
+        // Réinitialiser le formulaire
+        document.getElementById("titre").value = "";
+        document.getElementById("modal-categorie").value = "";
+        document.getElementById("myForm").reset();
+        const previewContainer = document.querySelector(".modal-adding");
+        previewContainer.innerHTML = "";
+      })
+      .catch((error) => console.error(error));
+  }
 });
 
 async function deleteWorks(m) {
   console.log("deleteWorks called");
-  m.preventDefault();
-  m.stopPropagation();
+  m.preventDefault(); // empêche le rechargement de la page
+  m.stopPropagation(); // empêche la propagation en dehors de l'event "m"
 
   let article = m.target.closest("article");
-
   let projectId = article.getAttribute("id");
+  let project = article.querySelector("img").getAttribute("alt");
 
   // afficher la boîte de confirmation avant de supprimer
-  const confirmed = window.confirm(
-    `Vous allez supprimer le projet ${projectId}. Êtes-vous sur ?`
+  const ok = window.confirm(
+    `Vous allez supprimer le projet ${project}. Êtes-vous sur ?`
   );
 
-  if (!confirmed) {
+  if (!ok) {
     return; // annuler la suppression si l'utilisateur n'a pas confirmé
   }
 
-  var element = document.getElementById(projectId);
+  var element = document.getElementById(projectId); // recuperation de l'id dans le DOM
 
   console.log("element: ", projectId);
 
-  if (element) {
-    element.remove();
-  }
-  if (article) {
-    article.remove();
-  }
+  element.remove();
+  article.remove();
+  refreshWorks();
 
   console.log("sending DELETE request");
   fetch(`http://localhost:5678/api/works/${projectId}`, {
