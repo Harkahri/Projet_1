@@ -49,6 +49,6 @@ Ce projet a été une opportunité passionnante pour moi de combiner mon intér�
 
 Pour toute question ou collaboration potentielle, n'hésitez pas à me contacter.
 
-**Développeur Front-End:** Votre Nom
+**Développeur Front-End:** Lucas O.
 **Agence:** AchiWebos
 **Date:** MARS 2023
